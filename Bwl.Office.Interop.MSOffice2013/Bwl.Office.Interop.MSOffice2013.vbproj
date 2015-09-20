@@ -63,6 +63,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Excel2013.vb" />
     <Compile Include="Word2013.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -140,6 +141,12 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
       <Private>True</Private>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bwl.Office.Interop\Bwl.Office.Interop.vbproj">
+      <Project>{2b226e49-e054-466a-8817-7bba01b1360b}</Project>
+      <Name>Bwl.Office.Interop</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

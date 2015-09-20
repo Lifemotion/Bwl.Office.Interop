@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2DD4E3F1-E508-48B3-ACB4-A1C9436EC24F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>Bwl.Office.Interop.Test.Module1</StartupObject>
+    <StartupObject>Bwl.Office.Interop.Test.TestApp</StartupObject>
     <RootNamespace>Bwl.Office.Interop.Test</RootNamespace>
     <AssemblyName>Bwl.Office.Interop.Test</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -67,7 +67,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Module1.vb" />
+    <Compile Include="TestApp.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -103,6 +103,12 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="test.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="test.xls">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bwl.Office.Interop.MSOffice2013\Bwl.Office.Interop.MSOffice2013.vbproj">
