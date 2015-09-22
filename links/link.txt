@@ -1,0 +1,9 @@
+https://msdn.microsoft.com/ru-ru/library/w1702h4a.aspx
+https://msdn.microsoft.com/ru-ru/library/yaa4ha8t.aspx
+https://msdn.microsoft.com/ru-ru/library/tkf9d64e.aspx
+https://msdn.microsoft.com/ru-ru/library/2dw39e8e.aspx
+http://www.realcoding.net/articles/rabota-s-ms-word.html
+http://www.askit.ru/custom/vba_office/m10/10_05_03_word_range_object.htm
+https://msdn.microsoft.com/en-us/library/office/ff835210.aspx
+https://superuser.com/questions/694907/when-to-use-which-built-in-microsoft-word-style
+http://wladm.narod.ru/C_Sharp/comword.html

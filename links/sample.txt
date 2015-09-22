@@ -1,0 +1,22 @@
+private void Table2()
+            {
+                int row = 2;
+                Microsoft.Office.Interop.Word.Table tbl2;
+                tbl2 = doc.Content.Tables[2];
+                tbl2.Rows[row].HeightRule = Microsoft.Office.Interop.Word.WdRowHeightRule.wdRowHeightAuto;
+                    int i;
+                    for (row = 2; row <= ov.dataGridView1.RowCount + 1; row++)
+                    {
+                        for (i = 0; i <= ov.dataGridView1.RowCount; i++)
+                        {
+                            if (row > 2) tbl2.Rows.Add();
+                            tbl2.Cell(row, 1).Range.Text = ov.dataGridView1.Rows[i].Cells[0].Value.ToString();
+                            tbl2.Cell(row, 2).Range.Text = ov.dataGridView1.Rows[i].Cells[1].Value.ToString();
+                            tbl2.Cell(row, 3).Range.Text = ov.dataGridView1.Rows[i].Cells[2].Value.ToString();
+                            tbl2.Cell(row, 4).Range.Text = ov.dataGridView1.Rows[i].Cells[3].Value.ToString();
+                            tbl2.Cell(row, 5).Range.Text = ov.dataGridView1.Rows[i].Cells[4].Value.ToString();
+                            tbl2.Cell(row, 6).Range.Text = ov.dataGridView1.Rows[i].Cells[5].Value.ToString();
+                            tbl2.Cell(row, 7).Range.Text = ov.dataGridView1.Rows[i].Cells[6].Value.ToString();
+                        }
+                    }
+            }
