@@ -90,12 +90,16 @@ Public Class Word2013
         _app.Selection.Find.Execute(findText, False, False, False, False, False, True, 1, False, replaceText, 2, False, False, False, False)
     End Sub
 
-    Public Sub AppendText(Optional fontSize As Integer = 6) Implements IWord.AppendText
+    Public Sub AppendText() Implements IWord.AppendText
         _doc.Activate()
+        Dim style As New TextStyle()
         With _app.Selection
             .Start = _doc.Range.End
             .End = _doc.Range.End
-            .Font.Size = fontSize
+            .Font.Name = style.FontName
+            .Font.Size = style.FontSize
+            .Font.Bold = If(style.IsBold, 1, 0)
+            .Font.Italic = If(style.IsItalic, 1, 0)
             .TypeParagraph()
         End With
     End Sub

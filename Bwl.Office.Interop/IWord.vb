@@ -32,7 +32,7 @@ End Class
 
 Public Interface IWord
     Inherits IOfficeApp
-    Sub AppendText(Optional fontSize As Integer = 6)
+    Sub AppendText()
     Sub AppendText(text As String, style As TextStyle, newParagraph As Boolean)
     Function AddTable(nRows As Integer, nCols As Integer, caption As String, Optional style As TableStyle = TableStyle.wdStyleTableLightGrid) As Integer
     Sub SetTableText(tableIdx As Integer, row As Integer, col As Integer, text As String, style As TextStyle)
