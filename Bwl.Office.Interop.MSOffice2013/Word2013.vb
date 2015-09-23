@@ -100,12 +100,15 @@ Public Class Word2013
         End With
     End Sub
 
-    Public Sub AppendText(text As String, fontSize As Integer, newParagraph As Boolean) Implements IWord.AppendText
+    Public Sub AppendText(text As String, style As TextStyle, newParagraph As Boolean) Implements IWord.AppendText
         _doc.Activate()
         With _app.Selection
             .Start = _doc.Range.End
             .End = _doc.Range.End
-            .Font.Size = fontSize
+            .Font.Name = style.FontName
+            .Font.Size = style.FontSize
+            .Font.Bold = If(style.IsBold, 1, 0)
+            .Font.Italic = If(style.IsItalic, 1, 0)
             .TypeText(text)
         End With
         If newParagraph Then _app.Selection.TypeParagraph()
@@ -122,11 +125,13 @@ Public Class Word2013
         Return _doc.Tables.Count
     End Function
 
-    Public Sub SetTableText(tableIdx As Integer, row As Integer, col As Integer, text As String, IsBold As Boolean, fontSize As Integer) Implements IWord.SetTableText
+    Public Sub SetTableText(tableIdx As Integer, row As Integer, col As Integer, text As String, style As TextStyle) Implements IWord.SetTableText
         With _doc.Tables(tableIdx).Range
             .Cells.VerticalAlignment = WdCellVerticalAlignment.wdCellAlignVerticalCenter
-            .Font.Size = fontSize
-            .Font.Bold = If(IsBold, 1, 0)
+            .Font.Name = style.FontName
+            .Font.Size = style.FontSize
+            .Font.Bold = If(style.IsBold, 1, 0)
+            .Font.Italic = If(style.IsItalic, 1, 0)
         End With
         _doc.Tables(tableIdx).Cell(row, col).Range.Text = text
     End Sub

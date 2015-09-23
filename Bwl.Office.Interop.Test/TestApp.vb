@@ -5,7 +5,7 @@ Module TestApp
     Sub Main()
         'Excel()
         'Word()
-        Word3()
+        Word2()
     End Sub
 
     Sub Excel()
@@ -50,44 +50,39 @@ Module TestApp
         'app.OpenDocumentCopy("test.doc", DateTime.Now.Ticks.ToString() + ".doc")
         app.Visible = True
         '-----------------------------------------------------------------------
-        app.AppendText("Заголовок", 24, True)
+        Dim isBold = False : Dim newParagraph = True
+        app.AppendText("Заголовок", New TextStyle() With {.FontName = "Arial", .FontSize = 24}, True)
         app.AppendText()
         '------------------------------
         Dim bmp As New Bitmap(100, 100)
         app.AddPicture(bmp)
-        '------------------------------
-        app.AppendText("Это тестовый текст! Строка шрифтом 8", 8, True)
-        app.AppendText("Это тестовый текст! Строка шрифтом 9", 9, True)
-        app.AppendText("Это тестовый текст! Строка шрифтом 10", 10, True)
-        app.AppendText("Это тестовый текст! Строка шрифтом 11", 11, True)
+        '------------------------------        
+        app.AppendText("Это тестовый текст Verdana! Строка шрифтом 8", New TextStyle() With {.FontSize = 8}, newParagraph)
+        app.AppendText("Это тестовый текст Verdana! Строка шрифтом 9", New TextStyle() With {.FontSize = 9}, newParagraph)
+        app.AppendText("Это тестовый текст Verdana! Строка шрифтом 10", New TextStyle() With {.FontSize = 10}, newParagraph)
+        app.AppendText("Это тестовый текст Verdana! Строка шрифтом 11", New TextStyle() With {.FontSize = 11}, newParagraph)
         app.AppendText()
         Dim tableIdx1 = app.AddTable(10, 4, "Новая таблица 1")
-        app.SetTableText(tableIdx1, 1, 1, "1;2", False, 11)
-        app.SetTableText(tableIdx1, 2, 2, "2;2", False, 11)
-        app.SetTableText(tableIdx1, 3, 3, "3;3", False, 11)
+        app.SetTableText(tableIdx1, 1, 1, "1;2", New TextStyle())
+        app.SetTableText(tableIdx1, 2, 2, "2;2", New TextStyle())
+        app.SetTableText(tableIdx1, 3, 3, "3;3", New TextStyle())
         app.AppendText()
         '-----------------------------
         app.AddPicture("cat.jpg")
         '-----------------------------
         app.AppendText()
-        app.AppendText("Это тестовый текст! Строка шрифтом 11", 11, True)
-        app.AppendText("Это тестовый текст! Строка шрифтом 10", 10, True)
-        app.AppendText("Это тестовый текст! Строка шрифтом 9", 9, True)
-        app.AppendText("Это тестовый текст! Строка шрифтом 8", 8, True)
+        app.AppendText("Это тестовый текст Times! Строка шрифтом 8", New TextStyle() With {.FontName = "Times New Roman", .FontSize = 8}, newParagraph)
+        app.AppendText("Это тестовый текст Times! Строка шрифтом 9", New TextStyle() With {.FontName = "Times New Roman", .FontSize = 9}, newParagraph)
+        app.AppendText("Это тестовый текст Times! Строка шрифтом 10", New TextStyle() With {.FontName = "Times New Roman", .FontSize = 10}, newParagraph)
+        app.AppendText("Это тестовый текст Times! Строка шрифтом 11", New TextStyle() With {.FontName = "Times New Roman", .FontSize = 11}, newParagraph)
         app.AppendText()
         Dim tableIdx2 = app.AddTable(10, 4, "Новая таблица 2")
-        app.SetTableText(tableIdx2, 1, 1, "1;2", False, 11)
-        app.SetTableText(tableIdx2, 2, 2, "2;2", False, 11)
-        app.SetTableText(tableIdx2, 3, 3, "3;3", False, 11)
+        app.SetTableText(tableIdx2, 1, 1, "1;2", New TextStyle() With {.IsBold = True})
+        app.SetTableText(tableIdx2, 2, 2, "2;2", New TextStyle() With {.IsBold = True})
+        app.SetTableText(tableIdx2, 3, 3, "3;3", New TextStyle() With {.IsBold = True})
         '-----------------------------------------------------------------------
         Console.ReadLine()
         app.CloseDocument()
         app.Close()
     End Sub
-
-    Sub Word3()
-        Dim orlanReport = New OrlanReportBuilder()
-        orlanReport.ViolationsReport()
-    End Sub
-
 End Module
