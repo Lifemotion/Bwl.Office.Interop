@@ -3,17 +3,15 @@
 Module TestApp
 
     Sub Main()
-        'Excel()
+        'Excel(Of ExcelDynamic)()
         'Word()
-        Word2()
+        Word2(Of WordDynamic)()
     End Sub
 
-    Sub Excel()
-        Dim appDebug As New Excel2013
-        Dim app As IExcel = appDebug
+    Sub Excel(Of T As {IExcel, New})()
+        Dim app = New T
 
         app.Create()
-        '   word.CreateDocument()
         Dim rnd As New Random
         app.OpenDocumentCopy("test.xls", rnd.Next.ToString + ".xls")
 
@@ -25,8 +23,8 @@ Module TestApp
         app.Close()
     End Sub
 
-    Sub Word()
-        Dim appDebug As New Word2013
+    Sub Word(Of T As {IWord, New})()
+        Dim appDebug As New T
         Dim app As IWord = appDebug
 
         app.Create()
@@ -42,8 +40,8 @@ Module TestApp
         app.Close()
     End Sub
 
-    Sub Word2()
-        Dim appDebug As New Word2013
+    Sub Word2(Of T As {IWord, New})()
+        Dim appDebug As New T
         Dim app As IWord = appDebug
         app.Create()
         app.CreateDocument()

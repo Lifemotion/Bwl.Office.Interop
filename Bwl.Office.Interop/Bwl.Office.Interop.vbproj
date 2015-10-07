@@ -46,11 +46,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -60,13 +56,14 @@
     <Import Include="System.Data" />
     <Import Include="System.Diagnostics" />
     <Import Include="System.Linq" />
-    <Import Include="System.Xml.Linq" />
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IExcel.vb" />
-    <Compile Include="IOfficeApp.vb" />
-    <Compile Include="IWord.vb" />
+    <Compile Include="LateBinding\ExcelDynamic.vb" />
+    <Compile Include="Interfaces\IExcel.vb" />
+    <Compile Include="Interfaces\IOfficeApp.vb" />
+    <Compile Include="Interfaces\IWord.vb" />
+    <Compile Include="LateBinding\WordDynamic.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

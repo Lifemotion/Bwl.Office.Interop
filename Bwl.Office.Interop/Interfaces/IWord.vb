@@ -21,6 +21,15 @@ Public Enum TableStyle
     wdStyleTableMediumShading1Accent1
     wdStyleTableMediumShading2
     wdStyleTableMediumShading2Accent1
+    wdStyleNormal
+    wdStyleHeading4
+    wdStyleHeading3
+    wdStyleHeading2
+    wdStyleHeading1
+    wdStyleIndex4
+    wdStyleIndex3
+    wdStyleIndex2
+    wdStyleIndex1
 End Enum
 
 Public Class TextStyle
